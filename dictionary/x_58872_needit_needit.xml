@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element extends="task" label="NeedIt" max_length="40" name="x_58872_needit_needit" sizeclass="1" type="collection">
+        <element attributes="edge_encryption_enabled=true" label="Assignment group" max_length="100" name="u_assignment_2" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Priority" max_length="100" name="u_priority_1" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="RC" max_length="500" name="u_rc_1" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Short description" max_length="5000" name="u_shortdescription_1" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Solution" max_length="5000" name="u_solution_2" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Status" max_length="200" name="u_status_3" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Tcs Support Team" max_length="200" name="u_tcs_support_4" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Title" max_length="400" name="u_title_5" type="string"/>
+    </element>
+</database>

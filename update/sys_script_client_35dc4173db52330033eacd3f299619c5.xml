@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description/>
+        <field>active</field>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>NeedIt_onload</name>
+        <order/>
+        <script><![CDATA[function onLoad() {
+	
+	var appName='x_58872_needit_needit';
+	var $j = jQuery.noConflict(true);
+
+	$j("<link/>", {
+   rel: "stylesheet",
+   type: "text/css",
+   href: "https://codepen.io/subham92/pen/gNqLgP.css"
+	}).appendTo("head");
+	
+	
+	
+	$j("<link/>", {
+   rel: "stylesheet",
+   type: "text/css",
+   href: "https://codepen.io/subham92/pen/QXJWLP.css"
+	}).appendTo("head");
+	
+	
+	$j(document).ready(function(){
+			
+			
+		
+		$j('#'+appName+'\\.do').html($j('#'+appName+'\\.do').html()+'<div class="myTable" id="myTable" style="overflow: auto;width: 903px;height: 320px; border-radius: 10px 10px 0px 0px; display:none; cursor: all-scroll; background-color: white;position: fixed;left: 157px;top: 21px;z-index: 9999;border: 1px solid;"><h5 style="float:left;font-weight: bold;text-align: center;width: 90%;">Similar Tickets</h5><h6 style="float: left;width: 4%;color: green;font-weight: bold; display:none;" class="copyStatus">Copied!</h6><input type="button" value="X" style="float:right;height: 30px;width: 30px;background-color: #f00707bd;color: white;font-weight: bold;border-radius: 10px;" onclick=" $j(this).parent().hide();"><div id="tableContainer" style="cursor: pointer;" class="tableContainer"><table class="scrollTable" style="clear:left;"><thead class="fixedHeader"><tr style="background-color: black;"><th style="width: 9%;">ticket_number</th><th style="width: 7%;">createdby</th><th style="width: 12%;">assignment_group</th><th style="width: 9%;">opened_date</th><th style="width: 5%;">priority</th><th style="width: 6.5%;">status</th><th style="width: 12%;">tcs_support_team</th><th style="width: 15.3%;">short_description</th><th style="width: 15.5%;">solution</th><th>Action</th></tr></thead><tbody class="scrollContent" id="myTableContents"></tbody></table></div>');
+	
+	
+	$j.getScript("https://codepen.io/subham92/pen/agMzZJ.js");
+	
+	});
+	//table css: https://codepen.io/subham92/pen/RzevLg.css
+	//https://codepen.io/subham92/pen/gNqLgP.css
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	$j('#element\\.'+appName+'\\.u_title_5').html($j('#element\\.'+appName+'\\.u_title_5').html()+'<input type="button" value="Call TARA" class="checkStatus" style="background-color: #8080801f;border-radius: 10px;border-color: white;border-style: solid;"> <div class="loader" style="height: 10px;width: 10px;float: right; display:none;"></div>');
+	
+	
+	
+	
+	$j('body').on('click', '.copyButton', function() {
+		
+		
+		$j('#'+appName+'\\.u_assignment_2').val($j($j(this).parent().parent().find(".assignment_group")[0]).html());
+		$j('#'+appName+'\\.u_priority_1').val($j($j(this).parent().parent().find(".priority")[0]).html());//need to see this.
+		$j('#'+appName+'\\.u_status_3').val($j($j(this).parent().parent().find(".status")[0]).html());
+		$j('#'+appName+'\\.u_tcs_support_4').val($j($j(this).parent().parent().find(".tcs_support_team")[0]).html());
+		$j('#'+appName+'\\.u_shortdescription_1').val($j($j(this).parent().parent().find(".short_description")[0]).html());
+		$j('#'+appName+'\\.u_solution_2').val($j($j(this).parent().parent().find(".solution")[0]).html());
+		$j('#'+appName+'\\.u_rc_1').val($j($j(this).parent().parent().find(".rc")[0]).html());
+		
+		//alert("Copied!");
+		
+		$j('.copyStatus').show();
+		setTimeout(function(){$j('.copyStatus').hide();},3000);
+	});
+	
+	$j('body').on('click', '.checkStatus', function() {
+		var title = $j('#'+appName+'\\.u_title_5').val();
+		
+		if(title===undefined || title==""){
+			alert("Please fill title.");
+			return;
+		}
+		$j(".loader").css({"display":"block"});
+		$j(".loader").show();
+		//alert(ticketNumber);
+		//$j('#'+appName+'\\.short_description').val(ticketNumber);
+		//https://reqres.in/api/products/3
+		//http://172.16.217.190:8000/apisimilarity
+		
+			   
+			   
+	$j.ajax({
+	  url: "https://172.16.217.190:8000/apisimilarity",
+	  data:{format:"json"},
+	  crossDomain: true,
+	  type:"GET",
+	  success: function (data) {
+	
+			alert(data);
+			var obj=[{"assignment_group":"GTS SEM Security","createdby":"John","id":24.0,"opened_date":"2018-10-25","priority":"P4 - Low","rc":"OTC Access Related","short_description":"General Request : Need Oracle OTC access - please assign ticket to GTS SEM Security","solution":"Run OTC Access script and enable access","status":"Work in Progress","tcs_support_team":"SEM Security","ticket_number":"TASK0201580","sim_1":0.6540441759889746},{"assignment_group":"GTS SEM Security","createdby":"Alex","id":49.0,"opened_date":"2018-10-25","priority":"P4 - Low","rc":"ATLAS Access Creation","short_description":"General Request : Need Oracle OTC access - please assign ticket to GTS SEM Security","solution":"Run ATLAS Access script and enable access","status":"Work in Progress","tcs_support_team":"SEM Security","ticket_number":"TASK0201572","sim_1":0.6540441759889746},{"assignment_group":"GTS SEM Security","createdby":"Alex","id":48.0,"opened_date":"2018-10-25","priority":"P4 - Low","rc":"ATLAS Access Creation","short_description":"General Request : Atlas | Assign ","solution":"Run ATLAS Access script and enable access","status":"On Hold (Clock Stopped)","tcs_support_team":"SEM Security","ticket_number":"TASK0216167","sim_1":0.3423987791054923},{"assignment_group":"GTS SEM Security","createdby":"John","id":27.0,"opened_date":"2018-10-25","priority":"P4 - Minor","rc":"OTC Access Related","short_description":"General Request : Need to assign \"MHE - Customer Service Rep - Exceeds/Clarification - USA\" responsibility in SOTCPROD (temporary basis) - assign to SEM Securit","solution":"Run OTC Access script and enable access","status":"On Hold (Clock Stopped)","tcs_support_team":"SEM Security","ticket_number":"TASK0192605","sim_1":0.3128905993913572},{"assignment_group":"GTS SEM Security","createdby":"Alex","id":46.0,"opened_date":"2018-10-25","priority":"P4 - Minor","rc":"OTC Access Related","short_description":"General Request : Please assign to GTS-SEM-Security - Agents needing new Oracle SOTCPROD.","solution":"Run OTC Access script and enable access","status":"On Hold (Clock Stopped)","tcs_support_team":"SEM Security","ticket_number":"TASK0192538","sim_1":0.28042906825878366}];
+			
+			//data = $j.parseJSON(obj);
+			$j("#myTable").show();
+			$j("#myTableContents").empty();
+			
+			$j(obj).each(function(){
+				var assignment_group = $j(this)[0]['assignment_group'];
+				var createdby = $j(this)[0]['createdby'];
+				var id = $j(this)[0]['id'];
+				var opened_date = $j(this)[0]['opened_date'];
+				
+				var priority = $j(this)[0]['priority'];
+				var rc = $j(this)[0]['rc'];
+				var short_description = $j(this)[0]['short_description'];
+				var solution = $j(this)[0]['solution'];
+				
+				var status = $j(this)[0]['status'];
+				var tcs_support_team = $j(this)[0]['tcs_support_team'];
+				var ticket_number = $j(this)[0]['ticket_number'];
+				var sim_1 = $j(this)[0]['sim_1'];
+				
+				
+				$j("#myTableContents").append("<tr><td class='rc' style='display:none;'>"+rc+"</td><td style='width: 10.2%;' class='ticket_number'>"+ticket_number+"</td><td class='createdby' style='width: 7.2%;'>"+createdby+"</td><td style='width: 12.8%;' class='assignment_group'>"+assignment_group+"</td><td style='width: 9.5%;' class='opened_date'>"+opened_date+"</td><td style='width: 5.5%;' class='priority'>"+priority+"</td><td style='width: 6%;' class='status'>"+status+"</td><td class='tcs_support_team' style='width: 12.2%;'>"+tcs_support_team+"</td><td style='width: 16%;' class='short_description'>"+short_description+"</td><td style='width: 16%;' class='solution'>"+solution+"</td><td><input type='button' value='Copy' class='copyButton'></td></tr>");
+				
+				
+				
+				
+				
+			});
+			
+			
+			
+			
+			$j(".loader").hide();
+			
+		}
+				   
+      });
+		
+		
+	});
+			
+	
+}
+]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-07-04 08:24:38</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>35dc4173db52330033eacd3f299619c5</sys_id>
+        <sys_mod_count>144</sys_mod_count>
+        <sys_name>NeedIt_onload</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sys_script_client_35dc4173db52330033eacd3f299619c5</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-07-16 08:38:14</sys_updated_on>
+        <table>x_58872_needit_needit</table>
+        <type>onLoad</type>
+        <ui_type>10</ui_type>
+        <view/>
+    </sys_script_client>
+</record_update>

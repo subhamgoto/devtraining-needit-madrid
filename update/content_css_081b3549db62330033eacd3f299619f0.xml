@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="content_css">
+    <content_css action="INSERT_OR_UPDATE">
+        <name>uiStyle</name>
+        <style>table.paleBlueRows {&#13;
+  font-family: "Times New Roman", Times, serif;&#13;
+  border: 1px solid #FFFFFF;&#13;
+  width: 350px;&#13;
+  height: 200px;&#13;
+  text-align: center;&#13;
+  border-collapse: collapse;&#13;
+}&#13;
+table.paleBlueRows td, table.paleBlueRows th {&#13;
+  border: 1px solid #FFFFFF;&#13;
+  padding: 3px 2px;&#13;
+}&#13;
+table.paleBlueRows tbody td {&#13;
+  font-size: 13px;&#13;
+}&#13;
+table.paleBlueRows tr:nth-child(even) {&#13;
+  background: #D0E4F5;&#13;
+}&#13;
+table.paleBlueRows thead {&#13;
+  background: #918C8E;&#13;
+  border-bottom: 5px solid #FFFFFF;&#13;
+}&#13;
+table.paleBlueRows thead th {&#13;
+  font-size: 17px;&#13;
+  font-weight: bold;&#13;
+  color: #FFFFFF;&#13;
+  text-align: center;&#13;
+  border-left: 2px solid #FFFFFF;&#13;
+}&#13;
+table.paleBlueRows thead th:first-child {&#13;
+  border-left: none;&#13;
+}&#13;
+&#13;
+table.paleBlueRows tfoot td {&#13;
+  font-size: 14px;&#13;
+}</style>
+        <sys_class_name>content_css</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-07-08 08:56:33</sys_created_on>
+        <sys_id>081b3549db62330033eacd3f299619f0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>uiStyle</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>content_css_081b3549db62330033eacd3f299619f0</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-07-08 08:56:33</sys_updated_on>
+        <type>local</type>
+        <url/>
+    </content_css>
+</record_update>
